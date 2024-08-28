@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #282c34;
+            color: white;
+            flex-direction: column;
+        }
+
+        #time {
+            font-size: 4em;
+            margin-top: 20px;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .info {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .info a {
+            color: #1da1f2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <div id="time"></div>
+        <div class="info">
+            <p>This website was created by Toxirboyev Xurshidbek</p>
+            <p>ID: 23303</p>
+            <p>Connect on <a href="https://t.me/fugaa0" target="_blank">Telegram</a></p>
+            <p>Connect on <a href="https://t.me/+mVuB9Y6Mn5UxMmVi" target="_blank">Telegram Chanel</a></p>
+            <p>Connect on <a href="https://www.instagram.com/toxirboyev.x?igsh=djd2emVsOG1rcnVv" target="_blank">Instagram</a></p>
+            <p>Connect on <a href="https://www.instagram.com/toxirboyev_x?igsh=bGR4eDRzOHNydzR3" target="_blank">Instagram with meeting</a></p>
+            <p>Connect on <a href="https://github.com/xurshidbeek" target="_blank">GitHub</a></p>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('time').textContent = timeString;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime(); // initial call to display time immediately on load
+    </script>
+</body>
+</html>
