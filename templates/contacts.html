@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .contacts-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+        .contacts-container h2 {
+            margin: 0 0 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .contacts-container p {
+            color: #555;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .contacts-container .contact-item {
+            margin-bottom: 15px;
+        }
+        .contacts-container .contact-item strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #777;
+        }
+        .contacts-container .contact-item a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .contacts-container .contact-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contacts-container">
+        <h2>Contact Us</h2>
+        <div class="contact-item">
+            <strong>Email:</strong>
+            <a href="mailto:contact@example.com">contact@example.com</a>
+        </div>
+        <div class="contact-item">
+            <strong>Phone:</strong>
+            <a href="tel:+1234567890">+1 234 567 890</a>
+        </div>
+        <div class="contact-item">
+            <strong>Address:</strong>
+            <p>123 Main Street, New York, NY 10001, USA</p>
+        </div>
+        <div class="contact-item">
+            <strong>Working Hours:</strong>
+            <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
+        </div>
+    </div>
+            <a href="{% url 'dashboard' %}" class="btn" target="_blank">Back</a><br>
+
+
+</body>
+</html>
