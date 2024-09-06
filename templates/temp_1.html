@@ -4,55 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <style>
+</head>
+
+
+     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .navbar {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #282c34;
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        .navbar a {
+            text-decoration: none;
             color: white;
-            flex-direction: column;
+            font-size: 24px;
+            margin: 0 20px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-
-        #time {
-            font-size: 4em;
-            margin-top: 20px;
+        .navbar a:hover {
+            background-color: #555;
+            color: #ffcc00;
         }
-
         .container {
+            margin-top: 100px;
             text-align: center;
         }
-
-        .info {
-            margin-top: 20px;
-            font-size: 1.2em;
-        }
-
-        .info a {
-            color: #1da1f2;
+        .dashboard-link {
+            font-size: 48px;
+            color: #333;
             text-decoration: none;
-            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .dashboard-link:hover {
+            color: #ff6347;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Website</h1>
-        <div id="time"></div>
-        <div class="info">
-            <p>This website was created by Toxirboyev Xurshidbek</p>
-            <p>ID: 23303</p>
-            <!--<p>Connect on <a href="https://t.me/fugaa0" target="_blank">Telegram</a></p>
-            <p>Connect on <a href="https://t.me/+mVuB9Y6Mn5UxMmVi" target="_blank">Telegram Chanel</a></p>
-            <p>Connect on <a href="https://www.instagram.com/toxirboyev.x?igsh=djd2emVsOG1rcnVv" target="_blank">Instagram</a></p>
-            <p>Connect on <a href="https://www.instagram.com/toxirboyev_x?igsh=bGR4eDRzOHNydzR3" target="_blank">Instagram with meeting</a></p>
-            <p>Connect on <a href="https://github.com/xurshidbeek" target="_blank">GitHub</a></p>-->
-            <p><a href="{% url 'dashboard' %}" target="_blank">Dashboard</a></p>
+
+    <div class="navbar">
+        <a href="{% url 'profile' %}" class="btn">Login</a>
+        <a href="{% url 'index'%}" class="btn">Home</a>
+        <a href="{% url 'product' %}" class="btn">Products</a>
+        <a href="{% url 'contact' %}" class="btn">Contacts</a>
+
+
         </div>
+
+    <div class="container">
+        <a href="{% url 'dashboard' %}" class="dashboard-link">Dashboard</a>
     </div>
+
+</body>
+</html>
+<!--
 
     <script>
         function updateTime() {
@@ -69,3 +84,4 @@
     </script>
 </body>
 </html>
+-->
