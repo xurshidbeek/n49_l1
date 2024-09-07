@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekday Selector</title>
+    <style>
+        .dashboard{
+            padding: 20px;
+            margin: 0 35%;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .weekdays {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+        .weekdays li {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .weekdays li:hover {
+            background-color: #0056b3;
+        }
+        .weekdays a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #result {
+            margin-top: 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Select Weekday Language</h1>
+        <h2>Weekdays:</h2>
+
+        <ul class="weekdays">
+            <li><a href="{% url 'uz' %}" onclick="showLanguage('Uzbek')">Dushanba (Uz)</a></li>
+            <li><a href="{% url 'ru' %}" onclick="showLanguage('Russian')">Понедельник (Ru)</a></li>
+            <li><a href="{%url 'en' %}" onclick="showLanguage('English')">Monday (En)</a></li>
+        </ul>
+        <div class="dashboard">
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+        </div>
+        <!-- Repeat for other weekdays -->
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function showLanguage(language) {
+            document.getElementById('result').textContent = 'Selected language: ' + language;
+        }
+    </script>
+
+</body>
+</html>

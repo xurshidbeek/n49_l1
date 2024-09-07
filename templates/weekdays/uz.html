@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzbek Weekdays</title>
+    <style>
+        .back{
+            text-align: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .weekdays {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style-type: none;
+            padding: 0;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.5s ease-out;
+        }
+        .weekdays.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .weekdays li {
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            font-size: 1.2em;
+        }
+        .weekdays li:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        .selected {
+            background-color: #ff5733 !important;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Weekdays in Uzbek</h1>
+        <button onclick="showWeekdays()">Show All Days</button>
+
+        <ul class="weekdays" id="weekdays-list">
+            <li onclick="selectDay(this)">Dushanba</li>
+            <li onclick="selectDay(this)">Seshanba</li>
+            <li onclick="selectDay(this)">Chorshanba</li>
+            <li onclick="selectDay(this)">Payshanba</li>
+            <li onclick="selectDay(this)">Juma</li>
+            <li onclick="selectDay(this)">Shanba</li>
+            <li onclick="selectDay(this)">Yakshanba</li>
+        </ul>
+    </div>
+    <div class="back">
+        <a href="{% url 'week' %}">Back</a>
+    </div>
+    <script>
+        function showWeekdays() {
+            const list = document.getElementById('weekdays-list');
+            list.classList.add('show');
+        }
+
+        function selectDay(element) {
+            // Remove selected class from all other elements
+            const days = document.querySelectorAll('.weekdays li');
+            days.forEach(day => day.classList.remove('selected'));
+
+            // Add selected class to the clicked element
+            element.classList.add('selected');
+        }
+    </script>
+
+</body>
+</html>

@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # apps
-    'n49',
+    'app_n49',
+    'app_weekdays'
 ]
 
 MIDDLEWARE = [
