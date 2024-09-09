@@ -1,9 +1,10 @@
 from django.shortcuts import render
-
+from .models import Post
 
 def index(request):
-    return render(request, 'temp_1.html')
-# Create your views here.
+    posts = Post.objects.all()
+    return render(request, 'temp_1.html',
+                  {'posts': posts})
 
 def profile(request):
     return render(request, 'profile.html')
